@@ -4,16 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1B3A6B">
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Mtto Prev">
-  <link rel="apple-touch-icon" href="icons/icon-152.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
-  <link rel="apple-touch-startup-image" href="icons/icon-512.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mtto Prev">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <title>Mantenimiento Preventivo 2026</title>
 <style>
 :root{
@@ -32,67 +27,67 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 .sidebar{width:220px;min-width:220px;background:var(--az);display:none;flex-direction:column;overflow:hidden}
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
 .hdr{height:var(--hdr);background:var(--az);display:flex;align-items:center;padding:0 1rem;gap:8px;flex-shrink:0;z-index:10}
-.content{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding:1rem;padding-bottom:calc(var(--nav) + env(safe-area-inset-bottom) + 8px)}
-.bnav{position:fixed;bottom:0;left:0;right:0;height:calc(var(--nav) + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--brd);display:flex;align-items:flex-start;padding-top:6px;z-index:50}
+.content{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding:1rem;padding-bottom:calc(var(--nav)+env(safe-area-inset-bottom)+8px)}
+.bnav{position:fixed;bottom:0;left:0;right:0;height:calc(var(--nav)+env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--brd);display:flex;align-items:flex-start;padding-top:6px;z-index:50}
 @media(min-width:768px){
   .sidebar{display:flex!important}
   .hdr,.bnav{display:none!important}
   .content{padding-bottom:1rem}
 }
 /* SIDEBAR */
-.sb-head{padding:18px 16px 8px}
-.sb-head h1{font-size:14px;font-weight:700;color:#fff;line-height:1.3}
+.sb-head{padding:16px 16px 8px}
+.sb-head h1{font-size:13px;font-weight:700;color:#fff;line-height:1.3}
 .sb-head p{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px}
-.sb-kpis{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px 12px 10px}
-.sk{background:rgba(255,255,255,.1);border-radius:8px;padding:8px;text-align:center}
-.sk .n{font-size:20px;font-weight:700;color:#fff}
+.sb-kpis{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:6px 12px 8px}
+.sk{background:rgba(255,255,255,.1);border-radius:7px;padding:7px;text-align:center}
+.sk .n{font-size:18px;font-weight:700;color:#fff}
 .sk .l{font-size:9px;color:rgba(255,255,255,.55);margin-top:1px}
 .sk.danger .n{color:#ff8a80}.sk.warning .n{color:#ffd180}
 .sk.success .n{color:#b9f6ca}.sk.info .n{color:#80d8ff}
 .sb-nav{flex:1;padding:0 10px;overflow-y:auto}
-.sni{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;color:rgba(255,255,255,.6);font-size:13px;font-weight:500;margin-bottom:2px;transition:all .15s;user-select:none}
-.sni svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.sni{display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:8px;cursor:pointer;color:rgba(255,255,255,.6);font-size:12px;font-weight:500;margin-bottom:2px;transition:all .15s;user-select:none}
+.sni svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .sni.active{background:rgba(255,255,255,.18);color:#fff}
 .sni:hover:not(.active){background:rgba(255,255,255,.08)}
-.sb-sync{padding:6px 16px 4px;display:flex;align-items:center;gap:6px;font-size:10px;color:rgba(255,255,255,.4)}
+.sb-sync{padding:5px 16px 3px;display:flex;align-items:center;gap:5px;font-size:10px;color:rgba(255,255,255,.4)}
 .sync-dot{width:6px;height:6px;border-radius:50%;background:#4caf50;flex-shrink:0}
 .sync-dot.spin{background:#ffc107;animation:blink 1s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.sb-foot{padding:8px 16px 14px;font-size:10px;color:rgba(255,255,255,.3)}
+.sb-foot{padding:6px 16px 12px;font-size:10px;color:rgba(255,255,255,.3)}
 .admin-row{padding:0 16px 8px;display:flex;align-items:center;justify-content:space-between}
 .admin-tag{font-size:10px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:4px}
 .admin-out{background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55);font-size:10px;padding:3px 8px;border-radius:20px;cursor:pointer}
 /* HEADER mobile */
-.hdr h1{font-size:15px;font-weight:600;color:#fff;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hdr h1{font-size:14px;font-weight:600;color:#fff;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hdr-badges{display:flex;gap:4px;flex-shrink:0}
-.hbadge{padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600;background:rgba(255,255,255,.15);color:#fff;white-space:nowrap}
+.hbadge{padding:2px 6px;border-radius:20px;font-size:10px;font-weight:600;background:rgba(255,255,255,.15);color:#fff;white-space:nowrap}
 .hbadge.r{background:rgba(180,30,30,.85)}.hbadge.a{background:rgba(180,100,0,.85)}
 .hdr-admin{background:rgba(255,255,255,.12);border:none;color:rgba(255,255,255,.75);font-size:11px;padding:4px 9px;border-radius:20px;cursor:pointer;display:flex;align-items:center;gap:3px;white-space:nowrap;flex-shrink:0}
 .hdr-admin svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 /* BOTTOM NAV */
-.bni{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:2px 0;cursor:pointer;color:var(--gr4);transition:color .15s;user-select:none}
+.bni{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;padding:2px 0;cursor:pointer;color:var(--gr4);transition:color .15s;user-select:none}
 .bni.active{color:var(--az2)}
-.bni svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bni svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .bni span{font-size:9px;font-weight:500}
 /* PANELS */
 .panel{display:none}.panel.active{display:block}
 /* CARDS */
 .card{background:var(--card);border-radius:var(--r);border:1px solid var(--brd);margin-bottom:10px;overflow:hidden}
-.ch{padding:11px 14px;border-bottom:1px solid var(--brd);display:flex;align-items:center;justify-content:space-between}
+.ch{padding:11px 14px;border-bottom:1px solid var(--brd);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
 .ch h2{font-size:13px;font-weight:600}
 .cb{padding:14px}
-/* KPI GRID */
+/* KPI */
 .kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
 @media(max-width:480px){.kgrid{grid-template-columns:1fr 1fr}}
 .kpi{background:var(--card);border-radius:var(--r);border:1px solid var(--brd);padding:11px 6px;text-align:center}
-.kpi .n{font-size:26px;font-weight:700;line-height:1}
+.kpi .n{font-size:24px;font-weight:700;line-height:1}
 .kpi .l{font-size:9px;color:var(--txt3);margin-top:3px;font-weight:500}
 .kpi.danger{border-left:4px solid var(--roj2)}.kpi.danger .n{color:var(--roj2)}
 .kpi.warning{border-left:4px solid var(--amr2)}.kpi.warning .n{color:var(--amr2)}
 .kpi.success{border-left:4px solid var(--vrd2)}.kpi.success .n{color:var(--vrd2)}
 .kpi.info{border-left:4px solid var(--az2)}.kpi.info .n{color:var(--az2)}
 /* ALERT ROW */
-.arow{display:flex;align-items:center;padding:11px 14px;gap:10px;border-bottom:1px solid var(--brd)}
+.arow{display:flex;align-items:center;padding:10px 14px;gap:10px;border-bottom:1px solid var(--brd)}
 .arow:last-child{border-bottom:none}
 .adot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .adot.r{background:var(--roj2)}.adot.a{background:var(--amr2)}
@@ -111,22 +106,23 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 .badge.proximo{background:var(--amr3);color:var(--amr)}
 .badge.vigente{background:var(--vrd3);color:var(--vrd)}
 .badge.sindata{background:var(--gr2);color:var(--gr4)}
-/* VEHICLE CARD */
-.vc{background:var(--card);border-radius:var(--r);border:1px solid var(--brd);padding:13px 14px;margin-bottom:8px}
+/* VEH CARD */
+.vc{background:var(--card);border-radius:var(--r);border:1px solid var(--brd);padding:12px 13px;margin-bottom:8px}
 .vc.vencido{border-left:4px solid var(--roj2)}
 .vc.proximo{border-left:4px solid var(--amr2)}
 .vc.vigente{border-left:4px solid var(--vrd2)}
 .vct{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
 .vcn{font-size:13px;font-weight:700}.vcs{font-size:11px;color:var(--txt3);margin-top:1px}
-.vcg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px}
-.vcgi{background:var(--gr1);border-radius:6px;padding:6px;text-align:center}
+.vcg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-top:8px}
+.vcgi{background:var(--gr1);border-radius:6px;padding:5px;text-align:center}
 .vcgi .v{font-size:12px;font-weight:700}.vcgi .k{font-size:9px;color:var(--txt3);margin-top:1px;text-transform:uppercase;letter-spacing:.02em}
-.vc-act{display:flex;gap:5px;margin-top:10px;justify-content:flex-end;flex-wrap:wrap}
+.vc-act{display:flex;gap:5px;margin-top:9px;justify-content:flex-end;flex-wrap:wrap}
 /* BUTTONS */
-.btn-sm{padding:5px 11px;border-radius:6px;border:1px solid var(--brd);background:var(--gr1);font-size:11px;font-weight:600;cursor:pointer;color:var(--txt2)}
+.btn-sm{padding:5px 10px;border-radius:6px;border:1px solid var(--brd);background:var(--gr1);font-size:11px;font-weight:600;cursor:pointer;color:var(--txt2)}
 .btn-sm:active{opacity:.75}
 .btn-sm.danger{color:var(--roj2);border-color:var(--roj3);background:var(--roj3)}
 .btn-sm.primary{color:#fff;background:var(--az2);border-color:var(--az2)}
+.btn-sm.success{color:var(--vrd);border-color:var(--vrd3);background:var(--vrd3)}
 .btn{width:100%;padding:10px;border-radius:var(--rs);border:none;font-size:13px;font-weight:700;cursor:pointer}
 .btn.primary{background:var(--az);color:#fff}.btn.primary:active{background:var(--az2)}
 .btn.secondary{background:var(--gr2);color:var(--txt2)}
@@ -139,11 +135,11 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 .fg label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--txt3)}
 .fg input,.fg select{padding:8px 10px;border:1px solid var(--brd);border-radius:var(--rs);background:var(--card);color:var(--txt);font-size:13px;width:100%}
 .fg input:focus,.fg select:focus{outline:none;border-color:var(--az2)}
-/* FILTER BTNS */
+/* FILTER */
 .fbrow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
 .fbtn{padding:5px 11px;border-radius:20px;border:1px solid var(--brd);background:var(--card);font-size:11px;font-weight:600;cursor:pointer;color:var(--txt3);white-space:nowrap}
 .fbtn.active{background:var(--az);color:#fff;border-color:var(--az)}
-/* REGISTRO KM */
+/* REGISTRO */
 .reg-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .rtbl{border-collapse:collapse;font-size:11px;white-space:nowrap}
 .rtbl th{padding:5px 6px;background:var(--az);color:#fff;font-size:9px;font-weight:700;text-align:center;position:sticky;top:0;z-index:5}
@@ -155,14 +151,14 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 .kmi{width:60px;padding:2px 3px;font-size:11px;border:1px solid #ccc;border-radius:4px;text-align:center;-moz-appearance:textfield}
 .kmi::-webkit-outer-spin-button,.kmi::-webkit-inner-spin-button{-webkit-appearance:none}
 .kmi:focus{outline:none;border-color:var(--az2)}
-/* ═══ PROGRAMA DE MANTENIMIENTO ═══ */
+/* PROGRAMA */
 .prog-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .ptbl{border-collapse:collapse;font-size:11px;white-space:nowrap}
-.ptbl th{padding:5px 5px;background:var(--az);color:#fff;font-size:9px;font-weight:700;text-align:center;position:sticky;top:0;z-index:5}
+.ptbl th{padding:5px 4px;background:var(--az);color:#fff;font-size:9px;font-weight:700;text-align:center;position:sticky;top:0;z-index:5}
 .ptbl td{border:1px solid var(--brd);text-align:center;padding:0}
-.psc1{position:sticky;left:0;background:var(--card);z-index:4;text-align:left;min-width:130px;max-width:130px;border-right:2px solid var(--brd);padding:5px 8px}
 .pth1{position:sticky;left:0;z-index:6;background:var(--az);min-width:130px;text-align:left;padding:5px 8px}
-.p-cell{width:46px;min-width:46px;height:30px;cursor:pointer;transition:background .15s;position:relative;display:flex;align-items:center;justify-content:center}
+.psc1{position:sticky;left:0;background:var(--card);z-index:4;text-align:left;min-width:130px;max-width:130px;border-right:2px solid var(--brd);padding:5px 8px}
+.p-cell{width:44px;min-width:44px;height:28px;cursor:pointer;transition:background .15s;display:flex;align-items:center;justify-content:center}
 .p-cell:hover{opacity:.8}
 .p-cell.realizado{background:var(--vrd3)}
 .p-cell.programado{background:var(--amr3)}
@@ -183,6 +179,19 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 .hcard-top strong{font-size:13px;font-weight:700}
 .htags{display:flex;gap:5px;flex-wrap:wrap}
 .htag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--az4);color:var(--az2);font-weight:600}
+/* REPORTES */
+.rep-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+@media(min-width:768px){.rep-grid{grid-template-columns:repeat(3,1fr)}}
+.rep-card{background:var(--card);border:1px solid var(--brd);border-radius:var(--r);padding:14px;text-align:center;cursor:pointer;transition:all .15s}
+.rep-card:hover{border-color:var(--az2);background:var(--az4)}
+.rep-card:active{transform:scale(.97)}
+.rep-icon{font-size:28px;margin-bottom:8px}
+.rep-title{font-size:12px;font-weight:700;color:var(--txt);margin-bottom:4px}
+.rep-desc{font-size:10px;color:var(--txt3);line-height:1.4}
+.rep-btns{display:flex;gap:6px;margin-top:10px;justify-content:center}
+.rep-btn{padding:5px 12px;border-radius:20px;border:none;font-size:11px;font-weight:600;cursor:pointer}
+.rep-btn.pdf{background:var(--roj3);color:var(--roj2)}
+.rep-btn.xls{background:var(--vrd3);color:var(--vrd)}
 /* MODAL */
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:flex-end;justify-content:center}
 @media(min-width:600px){.overlay{align-items:center}}
@@ -207,36 +216,38 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 .slbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--txt3);margin:14px 0 6px}
 .empty{text-align:center;padding:2rem;color:var(--txt3);font-size:13px}
 .loading{text-align:center;padding:3rem;color:var(--txt3);font-size:13px}
-.toast{position:fixed;bottom:calc(var(--nav) + 14px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(12px);background:#1a1a1a;color:#fff;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:600;opacity:0;transition:all .3s;pointer-events:none;z-index:999;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+.toast{position:fixed;bottom:calc(var(--nav)+14px+env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(12px);background:#1a1a1a;color:#fff;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:600;opacity:0;transition:all .3s;pointer-events:none;z-index:999;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media(min-width:768px){.toast{bottom:20px}}
+/* PRINT STYLES */
+@media print{
+  .shell,.hdr,.bnav,.sidebar{display:none!important}
+  #print-area{display:block!important}
+}
+#print-area{display:none;font-family:Arial,sans-serif;padding:20px;color:#000}
 </style>
 </head>
 <body>
 
-<!-- LOCK SCREEN -->
 <div class="lock-screen" id="lock-screen" style="display:none">
   <div class="lock-box">
     <div class="lock-icon">🔐</div>
     <h2>Acceso de administrador</h2>
     <p>Ingresa la contraseña para editar</p>
-    <input class="lock-input" type="password" id="lock-pwd" placeholder="Contraseña"
-      onkeydown="if(event.key==='Enter')tryLogin()">
+    <input class="lock-input" type="password" id="lock-pwd" placeholder="Contraseña" onkeydown="if(event.key==='Enter')tryLogin()">
     <div class="lock-error" id="lock-err"></div>
     <button class="lock-btn" onclick="tryLogin()">Ingresar</button>
     <button class="lock-cancel" onclick="closeLock()">Cancelar</button>
   </div>
 </div>
 
-<!-- MODAL -->
 <div class="overlay" id="overlay" style="display:none" onclick="closeModal(event)">
   <div class="modal" id="modal-body"></div>
 </div>
 
-<!-- APP SHELL -->
-<div class="shell">
+<div id="print-area"></div>
 
-  <!-- SIDEBAR desktop -->
+<div class="shell">
   <aside class="sidebar">
     <div class="sb-head">
       <h1>Mantenimiento Preventivo</h1>
@@ -258,6 +269,9 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
       </div>
       <div class="sni" id="sn-historial" onclick="go('historial')">
         <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Historial
+      </div>
+      <div class="sni" id="sn-reportes" onclick="go('reportes')">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>Reportes
       </div>
     </nav>
     <div class="admin-row" id="sb-admin-row"></div>
@@ -281,6 +295,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
       <div id="flota"    class="panel"><div class="loading">Cargando…</div></div>
       <div id="registro" class="panel"><div class="loading">Cargando…</div></div>
       <div id="historial"class="panel"><div class="loading">Cargando…</div></div>
+      <div id="reportes" class="panel"><div class="loading">Cargando…</div></div>
     </main>
 
     <nav class="bnav">
@@ -296,8 +311,8 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
       <div class="bni" id="bn-registro" onclick="go('registro')">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>KM</span>
       </div>
-      <div class="bni" id="bn-historial" onclick="go('historial')">
-        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Historial</span>
+      <div class="bni" id="bn-reportes" onclick="go('reportes')">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg><span>Reportes</span>
       </div>
     </nav>
   </div>
@@ -305,48 +320,47 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 
 <div class="toast" id="toast"></div>
 
+<!-- SheetJS for Excel export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 <script>
-/* ══ CONSTANTS ══ */
-const SERV_INT=10000, PROX_MRG=2000;
-const ADMIN_PWD='Champion84';
-const KEY_F='mtto26_flota', KEY_K='mtto26_km', KEY_H='mtto26_hist', KEY_P='mtto26_prog';
-const KM_STEPS=Array.from({length:50},(_,i)=>(i+1)*10000); // 10k…500k
+const SERV_INT=10000,PROX_MRG=2000,ADMIN_PWD='Champion84';
+const KEY_F='mtto26_flota',KEY_K='mtto26_km',KEY_H='mtto26_hist',KEY_P='mtto26_prog';
+const KM_STEPS=Array.from({length:50},(_,i)=>(i+1)*10000);
 
 const DEF_FLOTA=[
-  {id:'v1', marca:'TOYOTA HILUX 2026',placa:'NLF-900-C',contrato:'UL',      km:800,   ultsrv:0,     nota:''},
-  {id:'v2', marca:'TOYOTA HILUX 2024',placa:'NLF-395-C',contrato:'UL',      km:767,   ultsrv:0,     nota:''},
-  {id:'v3', marca:'TOYOTA HILUX 2024',placa:'NLF-858-C',contrato:'UL',      km:1062,  ultsrv:0,     nota:''},
-  {id:'v4', marca:'TOYOTA HILUX 2024',placa:'NFY-997-A',contrato:'UL',      km:63920, ultsrv:60000, nota:''},
-  {id:'v5', marca:'TOYOTA HILUX 2024',placa:'NNS-195-A',contrato:'UL',      km:65580, ultsrv:60000, nota:'Traslado CDMX'},
-  {id:'v6', marca:'TOYOTA HILUX 2024',placa:'NNS-213-A',contrato:'860',     km:52731, ultsrv:50000, nota:''},
-  {id:'v7', marca:'TOYOTA HILUX 2024',placa:'NNS-209-A',contrato:'UL',      km:87858, ultsrv:80000, nota:'Traslado CDMX'},
-  {id:'v8', marca:'TOYOTA HILUX 2024',placa:'NNS-205-A',contrato:'802',     km:57013, ultsrv:50000, nota:''},
-  {id:'v9', marca:'TOYOTA HILUX 2024',placa:'LJS-020-B',contrato:'UL',      km:53150, ultsrv:50000, nota:''},
-  {id:'v10',marca:'TOYOTA HILUX 2024',placa:'LJS-018-B',contrato:'801',     km:47707, ultsrv:40000, nota:''},
-  {id:'v11',marca:'TOYOTA HILUX 2024',placa:'NRB-809-A',contrato:'860/802', km:40877, ultsrv:40000, nota:''},
-  {id:'v12',marca:'TOYOTA HILUX 2024',placa:'NNS-217-A',contrato:'802',     km:56135, ultsrv:50000, nota:''},
-  {id:'v13',marca:'TOYOTA HILUX 2024',placa:'NFW-748-A',contrato:'802',     km:66363, ultsrv:60000, nota:''},
-  {id:'v14',marca:'TOYOTA HILUX 2024',placa:'NFW-759-A',contrato:'860',     km:76160, ultsrv:70000, nota:'Traslado CDMX'},
-  {id:'v15',marca:'FORD RANGER 2015', placa:'MUK-83-53',contrato:'860',     km:195228,ultsrv:190000,nota:''},
-  {id:'v16',marca:'FORD RANGER 2015', placa:'PAZ-98-25',contrato:'860',     km:null,  ultsrv:null,  nota:'Odóm. inoperante'},
-  {id:'v17',marca:'FORD RANGER 2015', placa:'MTZ-86-35',contrato:'UL',      km:258308,ultsrv:250000,nota:''},
-  {id:'v18',marca:'FORD RANGER 2015', placa:'MTZ-24-97',contrato:'UL',      km:211658,ultsrv:210000,nota:''},
-  {id:'v19',marca:'FORD RANGER 2015', placa:'MTZ-24-66',contrato:'UL',      km:null,  ultsrv:null,  nota:'Odóm. inoperante'},
-  {id:'v20',marca:'FORD F-350',       placa:'GZ-6352-B',contrato:'860/802', km:97071, ultsrv:90000, nota:''},
-  {id:'v21',marca:'FORD RANGER',      placa:'MUN-8051', contrato:'860',     km:null,  ultsrv:null,  nota:'Sin datos'},
-  {id:'v22',marca:'GRUA MAVA 23',     placa:'GZ-0227-A',contrato:'801',     km:null,  ultsrv:null,  nota:'Sin datos'},
-  {id:'v23',marca:'UNIDAD AC',        placa:'HA-6180-D',contrato:'801/802', km:null,  ultsrv:null,  nota:'Unidad aceite caliente'},
-  {id:'v24',marca:'UNIDAD',           placa:'7GF-670-A',contrato:'860/802', km:null,  ultsrv:null,  nota:'Sin datos'},
-  {id:'v25',marca:'UNIDAD',           placa:'25-AG-7M', contrato:'860/802', km:null,  ultsrv:null,  nota:'Sin datos'},
+  {id:'v1',marca:'TOYOTA HILUX 2026',placa:'NLF-900-C',contrato:'UL',km:800,ultsrv:0,nota:''},
+  {id:'v2',marca:'TOYOTA HILUX 2024',placa:'NLF-395-C',contrato:'UL',km:767,ultsrv:0,nota:''},
+  {id:'v3',marca:'TOYOTA HILUX 2024',placa:'NLF-858-C',contrato:'UL',km:1062,ultsrv:0,nota:''},
+  {id:'v4',marca:'TOYOTA HILUX 2024',placa:'NFY-997-A',contrato:'UL',km:63920,ultsrv:60000,nota:''},
+  {id:'v5',marca:'TOYOTA HILUX 2024',placa:'NNS-195-A',contrato:'UL',km:65580,ultsrv:60000,nota:'Traslado CDMX'},
+  {id:'v6',marca:'TOYOTA HILUX 2024',placa:'NNS-213-A',contrato:'860',km:52731,ultsrv:50000,nota:''},
+  {id:'v7',marca:'TOYOTA HILUX 2024',placa:'NNS-209-A',contrato:'UL',km:87858,ultsrv:80000,nota:'Traslado CDMX'},
+  {id:'v8',marca:'TOYOTA HILUX 2024',placa:'NNS-205-A',contrato:'802',km:57013,ultsrv:50000,nota:''},
+  {id:'v9',marca:'TOYOTA HILUX 2024',placa:'LJS-020-B',contrato:'UL',km:53150,ultsrv:50000,nota:''},
+  {id:'v10',marca:'TOYOTA HILUX 2024',placa:'LJS-018-B',contrato:'801',km:47707,ultsrv:40000,nota:''},
+  {id:'v11',marca:'TOYOTA HILUX 2024',placa:'NRB-809-A',contrato:'860/802',km:40877,ultsrv:40000,nota:''},
+  {id:'v12',marca:'TOYOTA HILUX 2024',placa:'NNS-217-A',contrato:'802',km:56135,ultsrv:50000,nota:''},
+  {id:'v13',marca:'TOYOTA HILUX 2024',placa:'NFW-748-A',contrato:'802',km:66363,ultsrv:60000,nota:''},
+  {id:'v14',marca:'TOYOTA HILUX 2024',placa:'NFW-759-A',contrato:'860',km:76160,ultsrv:70000,nota:'Traslado CDMX'},
+  {id:'v15',marca:'FORD RANGER 2015',placa:'MUK-83-53',contrato:'860',km:195228,ultsrv:190000,nota:''},
+  {id:'v16',marca:'FORD RANGER 2015',placa:'PAZ-98-25',contrato:'860',km:null,ultsrv:null,nota:'Odóm. inoperante'},
+  {id:'v17',marca:'FORD RANGER 2015',placa:'MTZ-86-35',contrato:'UL',km:258308,ultsrv:250000,nota:''},
+  {id:'v18',marca:'FORD RANGER 2015',placa:'MTZ-24-97',contrato:'UL',km:211658,ultsrv:210000,nota:''},
+  {id:'v19',marca:'FORD RANGER 2015',placa:'MTZ-24-66',contrato:'UL',km:null,ultsrv:null,nota:'Odóm. inoperante'},
+  {id:'v20',marca:'FORD F-350',placa:'GZ-6352-B',contrato:'860/802',km:97071,ultsrv:90000,nota:''},
+  {id:'v21',marca:'FORD RANGER',placa:'MUN-8051',contrato:'860',km:null,ultsrv:null,nota:'Sin datos'},
+  {id:'v22',marca:'GRUA MAVA 23',placa:'GZ-0227-A',contrato:'801',km:null,ultsrv:null,nota:'Sin datos'},
+  {id:'v23',marca:'UNIDAD AC',placa:'HA-6180-D',contrato:'801/802',km:null,ultsrv:null,nota:'Unidad aceite caliente'},
+  {id:'v24',marca:'UNIDAD',placa:'7GF-670-A',contrato:'860/802',km:null,ultsrv:null,nota:'Sin datos'},
+  {id:'v25',marca:'UNIDAD',placa:'25-AG-7M',contrato:'860/802',km:null,ultsrv:null,nota:'Sin datos'},
 ];
 
-/* ══ STATE ══ */
-let FLOTA=[], KM={}, HIST=[], PROG={};
-// PROG structure: { [placa]: { [kmStep]: 'R'|'P'|null } }
-let curTab='alertas', flotaFilter='todos', progFilter='todos';
-let isAdmin=false, lockCb=null, _saving=false;
+let FLOTA=[],KM={},HIST=[],PROG={};
+let curTab='alertas',flotaFilter='todos',progFilter='todos';
+let isAdmin=false,lockCb=null,_saving=false;
 
-/* ══ STORAGE ══ */
+/* ── STORAGE ── */
 function setSyncing(on){
   const d=document.getElementById('sync-dot'),l=document.getElementById('sync-lbl');
   if(d)d.className='sync-dot'+(on?' spin':'');
@@ -361,27 +375,22 @@ async function load(){
     ]);
     const [rf,rk,rh,rp]=res.map(r=>r.status==='fulfilled'?r.value:null);
     FLOTA=rf?.value?JSON.parse(rf.value):JSON.parse(JSON.stringify(DEF_FLOTA));
-    KM   =rk?.value?JSON.parse(rk.value):{};
-    HIST =rh?.value?JSON.parse(rh.value):[];
-    PROG =rp?.value?JSON.parse(rp.value):{};
-    // init PROG for any new vehicles
-    FLOTA.forEach(v=>{ if(!PROG[v.placa]) PROG[v.placa]={}; });
-  }catch(e){
-    FLOTA=JSON.parse(JSON.stringify(DEF_FLOTA));KM={};HIST={};PROG={};
-  }
-  setSyncing(false); render();
+    KM=rk?.value?JSON.parse(rk.value):{};
+    HIST=rh?.value?JSON.parse(rh.value):[];
+    PROG=rp?.value?JSON.parse(rp.value):{};
+    FLOTA.forEach(v=>{if(!PROG[v.placa])PROG[v.placa]={};});
+  }catch(e){FLOTA=JSON.parse(JSON.stringify(DEF_FLOTA));KM={};HIST=[];PROG={};}
+  setSyncing(false);render();
 }
 async function save(){
-  if(_saving)return; _saving=true; setSyncing(true);
-  try{
-    await Promise.all([
-      window.storage.set(KEY_F,JSON.stringify(FLOTA),true),
-      window.storage.set(KEY_K,JSON.stringify(KM),true),
-      window.storage.set(KEY_H,JSON.stringify(HIST),true),
-      window.storage.set(KEY_P,JSON.stringify(PROG),true),
-    ]);
-  }catch(e){toast('Error al guardar');}
-  _saving=false; setSyncing(false);
+  if(_saving)return;_saving=true;setSyncing(true);
+  try{await Promise.all([
+    window.storage.set(KEY_F,JSON.stringify(FLOTA),true),
+    window.storage.set(KEY_K,JSON.stringify(KM),true),
+    window.storage.set(KEY_H,JSON.stringify(HIST),true),
+    window.storage.set(KEY_P,JSON.stringify(PROG),true),
+  ]);}catch(e){toast('Error al guardar');}
+  _saving=false;setSyncing(false);
 }
 setInterval(async()=>{
   try{
@@ -399,8 +408,9 @@ setInterval(async()=>{
   }catch(e){}
 },15000);
 
-/* ══ HELPERS ══ */
+/* ── HELPERS ── */
 const n=x=>x!=null?parseInt(x).toLocaleString('es-MX'):'N/D';
+const nRaw=x=>x!=null?parseInt(x):0;
 function est(v){
   if(v.km==null||v.ultsrv==null)return'sindata';
   if(v.km>=v.ultsrv+SERV_INT)return'vencido';
@@ -419,8 +429,9 @@ const LBL={vencido:'Vencido',proximo:'Próximo',vigente:'Al corriente',sindata:'
 const badge=e=>`<span class="badge ${e}">${LBL[e]}</span>`;
 const uid=()=>'v'+Date.now()+Math.floor(Math.random()*9999);
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+const today=()=>new Date().toLocaleDateString('es-MX',{day:'2-digit',month:'2-digit',year:'numeric'});
 
-/* ══ ADMIN ══ */
+/* ── ADMIN ── */
 function updateAdminUI(){
   const sbRow=document.getElementById('sb-admin-row');
   const lbl=document.getElementById('hdr-admin-lbl');
@@ -433,32 +444,20 @@ function updateAdminUI(){
   }
 }
 function handleAdminBtn(){isAdmin?logout():showLock(()=>render());}
-function showLock(cb){
-  lockCb=cb;
-  document.getElementById('lock-pwd').value='';
-  document.getElementById('lock-err').textContent='';
-  document.getElementById('lock-screen').style.display='flex';
-  setTimeout(()=>document.getElementById('lock-pwd').focus(),100);
-}
+function showLock(cb){lockCb=cb;document.getElementById('lock-pwd').value='';document.getElementById('lock-err').textContent='';document.getElementById('lock-screen').style.display='flex';setTimeout(()=>document.getElementById('lock-pwd').focus(),100);}
 function closeLock(){document.getElementById('lock-screen').style.display='none';lockCb=null;}
 function tryLogin(){
   const p=document.getElementById('lock-pwd').value;
-  if(p===ADMIN_PWD){
-    isAdmin=true;closeLock();updateAdminUI();toast('Sesión de administrador iniciada');
-    if(lockCb){lockCb();lockCb=null;}
-  }else{
-    document.getElementById('lock-err').textContent='Contraseña incorrecta';
-    document.getElementById('lock-pwd').value='';
-    document.getElementById('lock-pwd').focus();
-  }
+  if(p===ADMIN_PWD){isAdmin=true;closeLock();updateAdminUI();toast('Sesión de administrador iniciada');if(lockCb){lockCb();lockCb=null;}}
+  else{document.getElementById('lock-err').textContent='Contraseña incorrecta';document.getElementById('lock-pwd').value='';document.getElementById('lock-pwd').focus();}
 }
 function logout(){isAdmin=false;updateAdminUI();render();toast('Sesión cerrada');}
 function requireAdmin(cb){isAdmin?cb():showLock(cb);}
 
-/* ══ NAVIGATION ══ */
+/* ── NAV ── */
 function go(id){
   curTab=id;
-  ['alertas','programa','flota','registro','historial'].forEach(i=>{
+  ['alertas','programa','flota','registro','historial','reportes'].forEach(i=>{
     document.getElementById(i).classList.toggle('active',i===id);
     ['bn-','sn-'].forEach(p=>{const el=document.getElementById(p+i);if(el)el.classList.toggle('active',i===id);});
   });
@@ -466,11 +465,12 @@ function go(id){
 }
 function render(){
   updateTopBadges();updateAdminUI();
-  if(curTab==='alertas')    renderAlertas();
-  else if(curTab==='programa')  renderPrograma();
-  else if(curTab==='flota')     renderFlota();
-  else if(curTab==='registro')  renderRegistro();
-  else if(curTab==='historial') renderHistorial();
+  if(curTab==='alertas')renderAlertas();
+  else if(curTab==='programa')renderPrograma();
+  else if(curTab==='flota')renderFlota();
+  else if(curTab==='registro')renderRegistro();
+  else if(curTab==='historial')renderHistorial();
+  else if(curTab==='reportes')renderReportes();
 }
 function updateTopBadges(){
   const c=cnts();
@@ -484,7 +484,7 @@ function updateTopBadges(){
     (c.proximo?`<span class="hbadge a">${c.proximo}P</span>`:'');
 }
 
-/* ══ ALERTAS ══ */
+/* ── ALERTAS ── */
 function renderAlertas(){
   const c=cnts();
   const venc=FLOTA.filter(v=>est(v)==='vencido');
@@ -517,183 +517,126 @@ function renderAlertas(){
           <div style="font-size:10px;color:var(--txt3)">Srv: ${n(proxKm(v))}</div></div></div>`;
     });h+=`</div>`;
   }
-  if(!venc.length&&!prxs.length)
-    h+=`<div class="card"><div class="empty">Sin alertas activas. Toda la flota con datos está al corriente.</div></div>`;
+  if(!venc.length&&!prxs.length)h+=`<div class="card"><div class="empty">Sin alertas activas. Toda la flota con datos está al corriente.</div></div>`;
   document.getElementById('alertas').innerHTML=h;
 }
 
-/* ══ PROGRAMA DE MANTENIMIENTO ══ */
-function getCellClass(v, kmStep){
-  if(!v.km && v.km!==0) return 'sindata-cell';
-  const progVal = PROG[v.placa]?.[kmStep];
-  const km = v.km;
-  // Already passed this service point
-  const hasPassed = km >= kmStep;
-  // Is the NEXT service point
-  const isNext = v.ultsrv!=null && kmStep === proxKm(v);
-  // Is overdue (km surpassed service point but not marked realizado)
-  const isOverdue = hasPassed && progVal !== 'R';
-
-  if(progVal === 'R') return 'realizado';
-  if(isOverdue && kmStep <= (v.ultsrv||0)) return 'pasado'; // old passed ones
-  if(isOverdue) return 'vencido-cell'; // this one is now overdue
-  if(isNext) return 'programado';
-  if(kmStep <= (v.ultsrv||0)) return 'pasado';
-  return 'futuro';
+/* ── PROGRAMA ── */
+function getCellClass(v,kmStep){
+  if(!v.km&&v.km!==0)return'sindata-cell';
+  const progVal=PROG[v.placa]?.[kmStep];
+  if(progVal==='R')return'realizado';
+  if(kmStep<=(v.ultsrv||0))return'pasado';
+  if(v.km>=kmStep)return'vencido-cell';
+  if(kmStep===proxKm(v))return'programado';
+  return'futuro';
 }
-function getCellLabel(v, kmStep){
-  const progVal = PROG[v.placa]?.[kmStep];
-  if(progVal==='R') return 'R';
-  if(!v.km && v.km!==0) return '';
+function getCellLabel(v,kmStep){
+  const progVal=PROG[v.placa]?.[kmStep];
+  if(progVal==='R')return'R';
   const cls=getCellClass(v,kmStep);
-  if(cls==='vencido-cell') return '⚠';
-  if(cls==='programado') return 'P';
-  if(cls==='pasado') return '✓';
-  if(cls==='futuro') return '';
-  return '';
+  if(cls==='vencido-cell')return'⚠';
+  if(cls==='programado')return'P';
+  if(cls==='pasado')return'✓';
+  return'';
 }
-
 function renderPrograma(){
-  // Determine visible km range: from 10k up to max(km)*1.3 or at least 100k
-  const maxKm = Math.max(...FLOTA.filter(v=>v.km).map(v=>v.km), 100000);
-  const showUpTo = Math.min(Math.ceil(maxKm * 1.4 / 10000) * 10000, 500000);
-  const visSteps = KM_STEPS.filter(k => k <= showUpTo);
-
+  const maxKm=Math.max(...FLOTA.filter(v=>v.km).map(v=>v.km),100000);
+  const showUpTo=Math.min(Math.ceil(maxKm*1.4/10000)*10000,500000);
+  const visSteps=KM_STEPS.filter(k=>k<=showUpTo);
   const filters=[['todos','Todas'],['vencido','Vencidas'],['proximo','Próximas'],['vigente','Al corriente']];
   let vehList=sorted();
-  if(progFilter!=='todos') vehList=vehList.filter(v=>est(v)===progFilter);
-
-  // summary stats
-  let totalProg=0, totalReal=0, totalVenc=0;
-  FLOTA.forEach(v=>{
-    if(!v.km&&v.km!==0)return;
-    visSteps.forEach(k=>{
-      const cls=getCellClass(v,k);
-      if(cls==='realizado') totalReal++;
-      else if(cls==='programado') totalProg++;
-      else if(cls==='vencido-cell') totalVenc++;
+  if(progFilter!=='todos')vehList=vehList.filter(v=>est(v)===progFilter);
+  let totalProg=0,totalReal=0,totalVenc=0;
+  FLOTA.forEach(v=>{if(!v.km&&v.km!==0)return;
+    visSteps.forEach(k=>{const cls=getCellClass(v,k);
+      if(cls==='realizado')totalReal++;else if(cls==='programado')totalProg++;else if(cls==='vencido-cell')totalVenc++;
     });
   });
-
   let h=`<div class="kgrid" style="grid-template-columns:repeat(3,1fr)">
     <div class="kpi success"><div class="n">${totalReal}</div><div class="l">Realizados</div></div>
     <div class="kpi warning"><div class="n">${totalProg}</div><div class="l">Programados</div></div>
     <div class="kpi danger"><div class="n">${totalVenc}</div><div class="l">Vencidos</div></div>
   </div>
-  <div class="fbrow">
-    ${filters.map(([k,l])=>`<button class="fbtn ${progFilter===k?'active':''}" onclick="setPF('${k}')">${l}</button>`).join('')}
-  </div>
-  <p style="font-size:11px;color:var(--txt3);margin-bottom:8px">
-    ${vehList.length} unidades · Toca una celda ${isAdmin?'para marcar Realizado / Programado':'(Admin para editar)'}
-  </p>
-  <div class="card" style="padding:0">
-  <div class="prog-wrap"><table class="ptbl">
-  <thead><tr>
+  <div class="fbrow">${filters.map(([k,l])=>`<button class="fbtn ${progFilter===k?'active':''}" onclick="setPF('${k}')">${l}</button>`).join('')}</div>
+  <p style="font-size:11px;color:var(--txt3);margin-bottom:8px">${vehList.length} unidades · Toca celda ${isAdmin?'para marcar':'(Admin para editar)'}</p>
+  <div class="card" style="padding:0"><div class="prog-wrap"><table class="ptbl"><thead><tr>
     <th class="pth1">Unidad / Placas</th>`;
-
-  // Km headers — group by 50k blocks for readability
-  let prevBlock=null;
-  visSteps.forEach(k=>{
-    const block=Math.floor(k/50000);
-    const altBg=block%2===0?'#1B3A6B':'#2E5FA3';
-    h+=`<th style="background:${altBg};min-width:46px;padding:4px 2px;font-size:9px">${(k/1000).toFixed(0)}K</th>`;
+  visSteps.forEach(k=>{const alt=Math.floor(k/50000)%2===0?'#1B3A6B':'#2E5FA3';
+    h+=`<th style="background:${alt};min-width:44px;padding:4px 2px;font-size:8px">${(k/1000).toFixed(0)}K</th>`;
   });
   h+=`</tr></thead><tbody>`;
-
   vehList.forEach(v=>{
-    const e=est(v);
-    const rowBg=e==='vencido'?'background:#fff8f8':e==='proximo'?'background:#fffcf5':'';
-    h+=`<tr style="${rowBg}">
-      <td class="psc1" style="${rowBg}">
-        <div style="font-weight:700;font-size:12px">${v.placa}</div>
-        <div style="font-size:10px;color:var(--txt3)">${v.marca} · ${v.contrato}</div>
-        <div style="margin-top:3px">${badge(e)}</div>
-      </td>`;
-
+    const e=est(v);const rowBg=e==='vencido'?'background:#fff8f8':e==='proximo'?'background:#fffcf5':'';
+    h+=`<tr style="${rowBg}"><td class="psc1" style="${rowBg}">
+      <div style="font-weight:700;font-size:12px">${v.placa}</div>
+      <div style="font-size:10px;color:var(--txt3)">${v.marca} · ${v.contrato}</div>
+      <div style="margin-top:3px">${badge(e)}</div></td>`;
     visSteps.forEach(k=>{
-      const cls=getCellClass(v,k);
-      const lbl=getCellLabel(v,k);
-      const clickable=isAdmin&&v.km!=null?`onclick="toggleCell('${v.placa}',${k})"`:
-                      !isAdmin&&v.km!=null?`onclick="requireAdmin(()=>{renderPrograma()})"`:'' ;
-      h+=`<td><div class="p-cell ${cls}" ${clickable}><span>${lbl}</span></div></td>`;
+      const cls=getCellClass(v,k);const lbl=getCellLabel(v,k);
+      const click=isAdmin&&v.km!=null?`onclick="toggleCell('${v.placa}',${k})"`:!isAdmin&&v.km!=null?`onclick="requireAdmin(()=>renderPrograma())"`:'' ;
+      h+=`<td><div class="p-cell ${cls}" ${click}><span>${lbl}</span></div></td>`;
     });
     h+=`</tr>`;
   });
-
   h+=`</tbody></table></div>
   <div class="prog-legend">
     <div class="leg-item"><div class="leg-dot" style="background:var(--vrd3);border:1px solid var(--vrd2)"></div>R — Realizado</div>
     <div class="leg-item"><div class="leg-dot" style="background:var(--amr3);border:1px solid var(--amr2)"></div>P — Programado</div>
     <div class="leg-item"><div class="leg-dot" style="background:var(--roj3);border:1px solid var(--roj2)"></div>⚠ — Vencido</div>
     <div class="leg-item"><div class="leg-dot" style="background:#F0F4F8;border:1px solid var(--brd)"></div>✓ — Histórico</div>
-    <div class="leg-item"><div class="leg-dot" style="background:var(--gr1);border:1px solid var(--brd)"></div>— Futuro</div>
-  </div>
-  </div>`;
-
+  </div></div>`;
   document.getElementById('programa').innerHTML=h;
 }
 function setPF(f){progFilter=f;renderPrograma();}
-
 async function toggleCell(placa,kmStep){
-  if(!isAdmin){toast('Requiere sesión de administrador');return;}
-  if(!PROG[placa]) PROG[placa]={};
+  if(!isAdmin){toast('Requiere administrador');return;}
+  if(!PROG[placa])PROG[placa]={};
   const cur=PROG[placa][kmStep];
-  // Cycle: null/futuro → P → R → null
-  if(!cur) PROG[placa][kmStep]='P';
-  else if(cur==='P') PROG[placa][kmStep]='R';
+  if(!cur)PROG[placa][kmStep]='P';
+  else if(cur==='P')PROG[placa][kmStep]='R';
   else delete PROG[placa][kmStep];
-
-  // If marked R, also update ultsrv on the vehicle
-  if(PROG[placa][kmStep]==='R'){
-    const v=FLOTA.find(x=>x.placa===placa);
-    if(v && kmStep>(v.ultsrv||0)) v.ultsrv=kmStep;
-  }
-  await save();
-  renderPrograma();
-  updateTopBadges();
+  if(PROG[placa][kmStep]==='R'){const v=FLOTA.find(x=>x.placa===placa);if(v&&kmStep>(v.ultsrv||0))v.ultsrv=kmStep;}
+  await save();renderPrograma();updateTopBadges();
 }
 
-/* ══ FLOTA ══ */
+/* ── FLOTA ── */
 function renderFlota(){
   let flota=sorted();
-  if(flotaFilter!=='todos') flota=flota.filter(v=>est(v)===flotaFilter);
+  if(flotaFilter!=='todos')flota=flota.filter(v=>est(v)===flotaFilter);
   const filters=[['todos','Todos'],['vencido','Vencidos'],['proximo','Próximos'],['vigente','Al corriente'],['sindata','Sin datos']];
-  let h=`<div class="fbrow">
-    ${filters.map(([k,l])=>`<button class="fbtn ${flotaFilter===k?'active':''}" onclick="setFF('${k}')">${l}</button>`).join('')}
+  let h=`<div class="fbrow">${filters.map(([k,l])=>`<button class="fbtn ${flotaFilter===k?'active':''}" onclick="setFF('${k}')">${l}</button>`).join('')}
     <button class="fbtn" style="margin-left:auto;background:var(--az);color:#fff;border-color:var(--az)" onclick="requireAdmin(openAddVeh)">+ Agregar</button>
   </div>
   <p style="font-size:11px;color:var(--txt3);margin-bottom:8px">${flota.length} de ${FLOTA.length} unidades
-    ${isAdmin?'<span style="color:var(--vrd2);font-weight:600;margin-left:8px">🔓 Admin activo</span>':'<span style="color:var(--txt3);margin-left:8px">🔒 Solo lectura</span>'}
+    ${isAdmin?'<span style="color:var(--vrd2);font-weight:600;margin-left:8px">🔓 Admin</span>':'<span style="color:var(--txt3);margin-left:8px">🔒 Solo lectura</span>'}
   </p>`;
   if(!flota.length){h+=`<div class="card"><div class="empty">Sin unidades en este filtro.</div></div>`;}
-  else{
-    flota.forEach(v=>{
-      const e=est(v),p=pct(v),r=restKm(v);
-      const rhtml=r==null?'—':r<0?`<span style="color:var(--roj2);font-weight:700">${Math.abs(r).toLocaleString('es-MX')} km atraso</span>`:`${r.toLocaleString('es-MX')} km`;
-      h+=`<div class="vc ${e}">
-        <div class="vct"><div><div class="vcn">${v.placa}</div><div class="vcs">${v.marca} · ${v.contrato}${v.nota?' · '+v.nota:''}</div></div>${badge(e)}</div>
-        ${p!=null?`<div class="abar" style="margin:6px 0 2px"><div class="abf ${e}" style="width:${p}%"></div></div><div style="font-size:9px;color:var(--txt3);text-align:right">${p}% del intervalo</div>`:''}
-        <div class="vcg">
-          <div class="vcgi"><div class="v">${n(v.km)}</div><div class="k">KM actual</div></div>
-          <div class="vcgi"><div class="v">${n(proxKm(v))}</div><div class="k">Próximo srv</div></div>
-          <div class="vcgi"><div class="v" style="font-size:11px">${rhtml}</div><div class="k">Restantes</div></div>
-        </div>
-        <div class="vc-act">
-          <button class="btn-sm" onclick="requireAdmin(()=>openUpdateKm('${v.id}'))">Actualizar KM</button>
-          <button class="btn-sm" onclick="requireAdmin(()=>openEditVeh('${v.id}'))">Editar</button>
-          <button class="btn-sm danger" onclick="requireAdmin(()=>delVeh('${v.id}'))">Eliminar</button>
-        </div>
-      </div>`;
-    });
-  }
+  else{flota.forEach(v=>{
+    const e=est(v),p=pct(v),r=restKm(v);
+    const rhtml=r==null?'—':r<0?`<span style="color:var(--roj2);font-weight:700">${Math.abs(r).toLocaleString('es-MX')} km atraso</span>`:`${r.toLocaleString('es-MX')} km`;
+    h+=`<div class="vc ${e}">
+      <div class="vct"><div><div class="vcn">${v.placa}</div><div class="vcs">${v.marca} · ${v.contrato}${v.nota?' · '+v.nota:''}</div></div>${badge(e)}</div>
+      ${p!=null?`<div class="abar" style="margin:6px 0 2px"><div class="abf ${e}" style="width:${p}%"></div></div><div style="font-size:9px;color:var(--txt3);text-align:right">${p}% del intervalo</div>`:''}
+      <div class="vcg">
+        <div class="vcgi"><div class="v">${n(v.km)}</div><div class="k">KM actual</div></div>
+        <div class="vcgi"><div class="v">${n(proxKm(v))}</div><div class="k">Próximo srv</div></div>
+        <div class="vcgi"><div class="v" style="font-size:11px">${rhtml}</div><div class="k">Restantes</div></div>
+      </div>
+      <div class="vc-act">
+        <button class="btn-sm" onclick="requireAdmin(()=>openUpdateKm('${v.id}'))">Actualizar KM</button>
+        <button class="btn-sm" onclick="requireAdmin(()=>openEditVeh('${v.id}'))">Editar</button>
+        <button class="btn-sm danger" onclick="requireAdmin(()=>delVeh('${v.id}'))">Eliminar</button>
+      </div>
+    </div>`;
+  });}
   document.getElementById('flota').innerHTML=h;
 }
 function setFF(f){flotaFilter=f;renderFlota();}
 
-/* ══ MODAL ══ */
+/* ── MODAL ── */
 function openModal(html){document.getElementById('modal-body').innerHTML=html;document.getElementById('overlay').style.display='flex';}
 function closeModal(e){if(!e||e.target===document.getElementById('overlay'))document.getElementById('overlay').style.display='none';}
-
 function openAddVeh(){
   openModal(`<button class="modal-close" onclick="closeModal()">×</button>
     <h3>Agregar unidad</h3><p class="modal-sub">Campos obligatorios: Marca, Placas y Contrato</p>
@@ -717,10 +660,9 @@ async function addVeh(){
   if(!marca||!placa||!contrato){toast('Completa marca, placas y contrato');return;}
   if(FLOTA.find(v=>v.placa===placa)){toast('Ya existe una unidad con esas placas');return;}
   FLOTA.push({id:uid(),marca,placa,contrato,km,ultsrv,nota});
-  if(!PROG[placa]) PROG[placa]={};
+  if(!PROG[placa])PROG[placa]={};
   closeModal();await save();renderFlota();toast(`Unidad ${placa} agregada`);
 }
-
 function openEditVeh(id){
   const v=FLOTA.find(x=>x.id===id);if(!v)return;
   openModal(`<button class="modal-close" onclick="closeModal()">×</button>
@@ -745,14 +687,12 @@ async function saveEdit(id){
   v.nota=document.getElementById('ev-nota').value.trim();
   closeModal();await save();renderFlota();toast('Unidad actualizada');
 }
-
 function openUpdateKm(id){
   const v=FLOTA.find(x=>x.id===id);if(!v)return;
   openModal(`<button class="modal-close" onclick="closeModal()">×</button>
-    <h3>Actualizar kilometraje</h3><p class="modal-sub">${v.placa} · KM actual: ${n(v.km)}</p>
-    <div class="fgrid">
-      <div class="fg full"><label>Nuevo KM actual</label><input type="number" id="ukm-km" placeholder="Ej: 53000" value="${v.km||''}"></div>
-    </div>
+    <h3>Actualizar KM</h3><p class="modal-sub">${v.placa} · KM actual: ${n(v.km)}</p>
+    <div class="fgrid"><div class="fg full"><label>Nuevo KM actual</label>
+      <input type="number" id="ukm-km" placeholder="Ej: 53000" value="${v.km||''}"></div></div>
     <button class="btn primary" onclick="doUpdateKm('${id}')">Actualizar</button>`);
 }
 async function doUpdateKm(id){
@@ -761,12 +701,11 @@ async function doUpdateKm(id){
   if(isNaN(km)||km<0){toast('KM inválido');return;}
   v.km=km;closeModal();await save();render();toast('KM actualizado');
 }
-
 async function delVeh(id){
   const v=FLOTA.find(x=>x.id===id);if(!v)return;
   openModal(`<button class="modal-close" onclick="closeModal()">×</button>
     <h3>Eliminar unidad</h3>
-    <p class="modal-sub" style="margin-bottom:18px">¿Eliminar <strong>${v.placa}</strong> (${v.marca})?<br>Esta acción no se puede deshacer.</p>
+    <p class="modal-sub" style="margin-bottom:18px">¿Eliminar <strong>${v.placa}</strong>?<br>Esta acción no se puede deshacer.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
       <button class="btn secondary" onclick="closeModal()">Cancelar</button>
       <button class="btn danger" onclick="confirmDel('${id}')">Sí, eliminar</button>
@@ -774,13 +713,11 @@ async function delVeh(id){
 }
 async function confirmDel(id){
   const v=FLOTA.find(x=>x.id===id);if(!v)return;
-  const placa=v.placa;
-  FLOTA=FLOTA.filter(x=>x.id!==id);
-  delete KM[placa];delete PROG[placa];
+  const placa=v.placa;FLOTA=FLOTA.filter(x=>x.id!==id);delete KM[placa];delete PROG[placa];
   closeModal();await save();renderFlota();toast(`Unidad ${placa} eliminada`);
 }
 
-/* ══ REGISTRO SEMANAL ══ */
+/* ── REGISTRO SEMANAL ── */
 const MES_LIST=['ENERO','ENERO','ENERO','ENERO','FEBRERO','FEBRERO','FEBRERO','FEBRERO',
   'MARZO','MARZO','MARZO','MARZO','MARZO','ABRIL','ABRIL','ABRIL','ABRIL',
   'MAYO','MAYO','MAYO','MAYO','MAYO','JUNIO','JUNIO','JUNIO','JUNIO',
@@ -810,11 +747,8 @@ function renderRegistro(){
     ${!isAdmin?'<span style="color:var(--amr);margin-left:6px">🔒 Solo lectura</span>':'<span style="color:var(--vrd2);margin-left:6px">🔓 Editable</span>'}
   </p>
   <div class="card" style="padding:0"><div class="reg-wrap"><table class="rtbl">
-  <thead><tr>
-    <th class="sth1">Unidad</th><th class="sth2" style="text-align:center">KM actual</th>`;
-  Object.entries(grupos).forEach(([mes,ss])=>{
-    h+=`<th colspan="${ss.length}" style="background:${MES_COL[mes]};text-align:center;padding:5px 0">${mes}</th>`;
-  });
+  <thead><tr><th class="sth1">Unidad</th><th class="sth2" style="text-align:center">KM actual</th>`;
+  Object.entries(grupos).forEach(([mes,ss])=>{h+=`<th colspan="${ss.length}" style="background:${MES_COL[mes]};text-align:center;padding:5px 0">${mes}</th>`;});
   h+=`</tr><tr><th class="sth1" style="font-size:9px">Placas · Contrato</th><th class="sth2" style="font-size:9px;text-align:center">KM</th>`;
   sems.forEach(s=>{h+=`<th style="background:${MES_COL[s.mes]}cc;font-size:9px;min-width:68px;padding:3px 2px">${s.label}<br>${s.lun}</th>`;});
   h+=`</tr></thead><tbody>`;
@@ -832,18 +766,14 @@ function renderRegistro(){
     });
     h+=`</tr>`;
   });
-  h+=`</tbody><tfoot><tr style="background:var(--gr1)">
-    <td class="sc1" style="background:var(--gr1);font-size:9px;font-weight:700;color:var(--txt3)">PRÓXIMO SERVICIO</td>
-    <td class="sc2" style="background:var(--gr1)"></td>`;
+  h+=`</tbody><tfoot><tr style="background:var(--gr1)"><td class="sc1" style="background:var(--gr1);font-size:9px;font-weight:700;color:var(--txt3)">PRÓXIMO SERVICIO</td><td class="sc2" style="background:var(--gr1)"></td>`;
   sems.forEach(()=>h+=`<td style="background:var(--gr1)"></td>`);
   h+=`</tr>`;
   vehs.forEach(v=>{
-    const pk=proxKm(v),e=est(v);
-    const fc=e==='vencido'?'var(--roj2)':e==='proximo'?'var(--amr2)':'var(--vrd2)';
+    const pk=proxKm(v),e=est(v);const fc=e==='vencido'?'var(--roj2)':e==='proximo'?'var(--amr2)':'var(--vrd2)';
     h+=`<tr><td class="sc1" style="font-size:11px;font-weight:700">${v.placa}</td>
       <td class="sc2" style="text-align:center;font-weight:700;font-size:12px;color:${fc}">${n(pk)}</td>`;
-    sems.forEach(()=>h+=`<td style="background:var(--gr1)"></td>`);
-    h+=`</tr>`;
+    sems.forEach(()=>h+=`<td style="background:var(--gr1)"></td>`);h+=`</tr>`;
   });
   h+=`</tfoot></table></div></div>`;
   document.getElementById('registro').innerHTML=h;
@@ -857,10 +787,10 @@ async function saveKmCell(placa,idx,val){
   updateTopBadges();await save();
 }
 
-/* ══ HISTORIAL ══ */
+/* ── HISTORIAL ── */
 function renderHistorial(){
   let h=`<div class="card">
-    <div class="ch"><h2>Registrar servicio</h2>${!isAdmin?`<button class="btn-sm" style="color:var(--amr);border-color:var(--amr3);background:var(--amr3);font-size:11px" onclick="requireAdmin(renderHistorial)">🔒 Requiere admin</button>`:''}</div>
+    <div class="ch"><h2>Registrar servicio</h2>${!isAdmin?`<button class="btn-sm" style="color:var(--amr);border-color:var(--amr3);background:var(--amr3)" onclick="requireAdmin(renderHistorial)">🔒 Requiere admin</button>`:''}</div>
     <div class="cb"><div class="fgrid g3">
       <div class="fg"><label>Fecha</label><input type="date" id="hf-fecha" value="${new Date().toISOString().slice(0,10)}" ${!isAdmin?'disabled':''}></div>
       <div class="fg"><label>Unidad / Placas</label><select id="hf-placa" ${!isAdmin?'disabled':''}>${FLOTA.map(v=>`<option value="${v.placa}">${v.placa} — ${v.marca}</option>`).join('')}</select></div>
@@ -878,17 +808,14 @@ function renderHistorial(){
     </div></div>`;
   if(HIST.length){
     h+=`<p class="slbl">${HIST.length} servicio${HIST.length>1?'s':''} registrado${HIST.length>1?'s':''}</p>`;
-    [...HIST].reverse().forEach((r,ri)=>{
-      const realIdx=HIST.length-1-ri;
+    [...HIST].reverse().forEach((r,ri)=>{const realIdx=HIST.length-1-ri;
       h+=`<div class="hcard"><div class="hcard-top"><strong>${r.placa}</strong>
-        <div style="display:flex;gap:8px;align-items:center">
-          <span style="font-size:11px;color:var(--txt3)">${r.fecha}</span>
+        <div style="display:flex;gap:8px;align-items:center"><span style="font-size:11px;color:var(--txt3)">${r.fecha}</span>
           ${isAdmin?`<button class="btn-sm danger" style="padding:2px 8px;font-size:10px" onclick="requireAdmin(()=>delHist(${realIdx}))">Eliminar</button>`:''}
         </div></div>
         <div class="htags"><span class="htag">${n(r.km)} km</span><span class="htag">${r.tipo}</span>
           ${r.taller?`<span class="htag">${r.taller}</span>`:''}${r.tec?`<span class="htag">${r.tec}</span>`:''}
-        </div>
-        ${r.obs?`<p style="font-size:11px;color:var(--txt3);margin-top:6px">${r.obs}</p>`:''}
+        </div>${r.obs?`<p style="font-size:11px;color:var(--txt3);margin-top:6px">${r.obs}</p>`:''}
       </div>`;
     });
   }else{h+=`<div class="card"><div class="empty">Aún no hay servicios registrados.</div></div>`;}
@@ -907,61 +834,386 @@ async function guardar(){
   HIST.push(r);
   const v=FLOTA.find(x=>x.placa===placa);
   if(v){if(km>(v.km||0))v.km=km;v.ultsrv=Math.floor(km/SERV_INT)*SERV_INT;}
-  // Auto-mark the km step as R in the programa
   const step=Math.floor(km/SERV_INT)*SERV_INT;
   if(step>0){if(!PROG[placa])PROG[placa]={};PROG[placa][step]='R';}
-  await save();renderHistorial();updateTopBadges();toast('Servicio guardado y registrado en el programa');
+  await save();renderHistorial();updateTopBadges();toast('Servicio guardado');
 }
-async function delHist(idx){
-  HIST.splice(idx,1);await save();renderHistorial();toast('Registro eliminado');
+async function delHist(idx){HIST.splice(idx,1);await save();renderHistorial();toast('Registro eliminado');}
+
+/* ══════════════════════════════════════════════
+   REPORTES
+══════════════════════════════════════════════ */
+function renderReportes(){
+  const reportes=[
+    {id:'flota',    icon:'🚛', title:'Flota completa',          desc:'Estado actual de todas las unidades con KM, alertas y próximos servicios',              pdf:true, xls:true},
+    {id:'alertas',  icon:'🔔', title:'Servicios vencidos y próximos', desc:'Unidades con servicio vencido o que se acerca el próximo servicio',             pdf:true, xls:true},
+    {id:'programa', icon:'📋', title:'Programa de mantenimiento', desc:'Estado P/R por unidad en cada intervalo de 10,000 km',                              pdf:true, xls:true},
+    {id:'historial',icon:'🔧', title:'Historial de servicios',   desc:'Todos los servicios realizados con fecha, km, taller y técnico',                      pdf:true, xls:true},
+    {id:'mensual',  icon:'📅', title:'Mantenimientos por mes',   desc:'Cantidad y detalle de servicios realizados agrupados por mes',                        pdf:true, xls:true},
+    {id:'anual',    icon:'📆', title:'Mantenimientos por año',   desc:'Resumen anual de servicios, km recorridos y estado de flota',                         pdf:true, xls:true},
+    {id:'kmsemanal',icon:'📊', title:'Kilometraje semanal',      desc:'Registro de km por unidad por semana durante todo el año',                            pdf:true, xls:true},
+  ];
+  let h=`<p class="slbl">Selecciona el reporte que deseas generar</p>
+  <div class="rep-grid">`;
+  reportes.forEach(r=>{
+    h+=`<div class="rep-card">
+      <div class="rep-icon">${r.icon}</div>
+      <div class="rep-title">${r.title}</div>
+      <div class="rep-desc">${r.desc}</div>
+      <div class="rep-btns">
+        ${r.pdf?`<button class="rep-btn pdf" onclick="genReport('${r.id}','pdf')">📄 PDF</button>`:''}
+        ${r.xls?`<button class="rep-btn xls" onclick="genReport('${r.id}','xls')">📊 Excel</button>`:''}
+      </div>
+    </div>`;
+  });
+  h+=`</div>`;
+  document.getElementById('reportes').innerHTML=h;
 }
 
-/* ══ INIT ══ */
+/* ── REPORT GENERATOR ── */
+function genReport(tipo,formato){
+  if(formato==='pdf') genPDF(tipo);
+  else genExcel(tipo);
+}
+
+/* ═══ PDF GENERATION ═══ */
+function genPDF(tipo){
+  const title=getReportTitle(tipo);
+  const content=getReportHTML(tipo);
+  const printWin=window.open('','_blank','width=900,height=700');
+  if(!printWin){toast('Activa las ventanas emergentes para generar PDF');return;}
+  printWin.document.write(`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+  <title>${title}</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;font-size:11px;color:#000;padding:20px}
+    .rep-header{background:#1B3A6B;color:#fff;padding:16px 20px;border-radius:6px;margin-bottom:16px}
+    .rep-header h1{font-size:16px;font-weight:700;margin-bottom:4px}
+    .rep-header p{font-size:10px;opacity:.75}
+    table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:10px}
+    th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.04em}
+    td{padding:6px 8px;border-bottom:1px solid #e0e4ed}
+    tr:nth-child(even) td{background:#f4f6fa}
+    .badge-v{background:#fadbd8;color:#8B0000;padding:2px 7px;border-radius:10px;font-size:9px;font-weight:700}
+    .badge-p{background:#fdebd0;color:#8B4A00;padding:2px 7px;border-radius:10px;font-size:9px;font-weight:700}
+    .badge-ok{background:#d5f5e3;color:#1E6B34;padding:2px 7px;border-radius:10px;font-size:9px;font-weight:700}
+    .badge-nd{background:#e8ecf2;color:#777;padding:2px 7px;border-radius:10px;font-size:9px;font-weight:700}
+    .kpi-row{display:flex;gap:12px;margin-bottom:14px}
+    .kpi-box{flex:1;border:1px solid #e0e4ed;border-radius:6px;padding:10px;text-align:center}
+    .kpi-box .kn{font-size:22px;font-weight:700}
+    .kpi-box .kl{font-size:9px;color:#777;margin-top:2px}
+    .danger .kn{color:#C0392B}.warning .kn{color:#E67E22}.success .kn{color:#27AE60}.info .kn{color:#2E5FA3}
+    .section-title{font-size:12px;font-weight:700;margin:12px 0 6px;color:#1B3A6B;text-transform:uppercase;letter-spacing:.04em}
+    .prog-cell{display:inline-block;width:28px;height:18px;line-height:18px;text-align:center;font-size:9px;font-weight:700;border-radius:3px;margin:1px}
+    .prog-r{background:#d5f5e3;color:#1E6B34}
+    .prog-p{background:#fdebd0;color:#8B4A00}
+    .prog-w{background:#fadbd8;color:#8B0000}
+    .prog-h{background:#f0f4f8;color:#999}
+    @media print{body{padding:10px}button{display:none!important}}
+  </style></head><body>
+  <div class="rep-header">
+    <h1>${title}</h1>
+    <p>Generado: ${today()} · Total unidades: ${FLOTA.length} · Intervalo de servicio: 10,000 km</p>
+  </div>
+  ${content}
+  <div style="margin-top:20px;padding-top:12px;border-top:1px solid #e0e4ed;font-size:9px;color:#aaa;text-align:center">
+    Programa de Mantenimiento Preventivo — Generado automáticamente el ${today()}
+  </div>
+  <div style="text-align:center;margin-top:16px"><button onclick="window.print()" style="background:#1B3A6B;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer">🖨️ Imprimir / Guardar como PDF</button></div>
+  </body></html>`);
+  printWin.document.close();
+}
+
+function getReportTitle(tipo){
+  const titles={flota:'Reporte General de Flota',alertas:'Servicios Vencidos y Próximos',
+    programa:'Programa de Mantenimiento',historial:'Historial de Servicios',
+    mensual:'Mantenimientos por Mes',anual:'Resumen Anual',kmsemanal:'Registro de Kilometraje Semanal'};
+  return titles[tipo]||'Reporte';
+}
+
+function getReportHTML(tipo){
+  if(tipo==='flota')       return repFlotaHTML();
+  if(tipo==='alertas')     return repAlertasHTML();
+  if(tipo==='programa')    return repProgramaHTML();
+  if(tipo==='historial')   return repHistorialHTML();
+  if(tipo==='mensual')     return repMensualHTML();
+  if(tipo==='anual')       return repAnualHTML();
+  if(tipo==='kmsemanal')   return repKmSemanalHTML();
+  return '';
+}
+
+function repFlotaHTML(){
+  const c=cnts();
+  let h=`<div class="kpi-row">
+    <div class="kpi-box danger"><div class="kn">${c.vencido}</div><div class="kl">Vencidos</div></div>
+    <div class="kpi-box warning"><div class="kn">${c.proximo}</div><div class="kl">Próximos</div></div>
+    <div class="kpi-box success"><div class="kn">${c.vigente}</div><div class="kl">Al corriente</div></div>
+    <div class="kpi-box info"><div class="kn">${c.sindata}</div><div class="kl">Sin datos</div></div>
+  </div>
+  <table><thead><tr><th>Placas</th><th>Marca/Modelo</th><th>Contrato</th><th>KM Actual</th><th>Último Serv.</th><th>Próximo Serv.</th><th>KM Restantes</th><th>Estado</th></tr></thead><tbody>`;
+  sorted().forEach(v=>{
+    const e=est(v),r=restKm(v);
+    const bclass={vencido:'badge-v',proximo:'badge-p',vigente:'badge-ok',sindata:'badge-nd'}[e];
+    const rstr=r==null?'N/D':r<0?`-${Math.abs(r).toLocaleString('es-MX')} km`:`${r.toLocaleString('es-MX')} km`;
+    h+=`<tr><td><strong>${v.placa}</strong></td><td>${v.marca}</td><td>${v.contrato}</td>
+      <td>${n(v.km)}</td><td>${n(v.ultsrv)}</td><td>${n(proxKm(v))}</td>
+      <td>${rstr}</td><td><span class="${bclass}">${LBL[e]}</span></td></tr>`;
+  });
+  h+=`</tbody></table>`;return h;
+}
+
+function repAlertasHTML(){
+  const venc=FLOTA.filter(v=>est(v)==='vencido');
+  const prxs=FLOTA.filter(v=>est(v)==='proximo');
+  let h='';
+  if(venc.length){
+    h+=`<div class="section-title">⛔ Servicios Vencidos (${venc.length})</div>
+    <table><thead><tr><th>Placas</th><th>Marca</th><th>Contrato</th><th>KM Actual</th><th>Servicio Vencido</th><th>KM de Atraso</th><th>Nota</th></tr></thead><tbody>`;
+    venc.forEach(v=>{const r=restKm(v);
+      h+=`<tr><td><strong>${v.placa}</strong></td><td>${v.marca}</td><td>${v.contrato}</td>
+        <td>${n(v.km)}</td><td>${n(proxKm(v))}</td>
+        <td style="color:#C0392B;font-weight:700">${Math.abs(r).toLocaleString('es-MX')} km</td>
+        <td>${v.nota||'—'}</td></tr>`;
+    });
+    h+=`</tbody></table>`;
+  }
+  if(prxs.length){
+    h+=`<div class="section-title">⚠️ Próximos Servicios (${prxs.length})</div>
+    <table><thead><tr><th>Placas</th><th>Marca</th><th>Contrato</th><th>KM Actual</th><th>Próximo Servicio</th><th>KM Restantes</th><th>% Avance</th></tr></thead><tbody>`;
+    prxs.forEach(v=>{const r=restKm(v),p=pct(v);
+      h+=`<tr><td><strong>${v.placa}</strong></td><td>${v.marca}</td><td>${v.contrato}</td>
+        <td>${n(v.km)}</td><td>${n(proxKm(v))}</td>
+        <td style="color:#E67E22;font-weight:700">${r.toLocaleString('es-MX')} km</td>
+        <td>${p}%</td></tr>`;
+    });
+    h+=`</tbody></table>`;
+  }
+  if(!venc.length&&!prxs.length)h+=`<p style="text-align:center;padding:2rem;color:#888">Sin alertas activas. Toda la flota con datos está al corriente.</p>`;
+  return h;
+}
+
+function repProgramaHTML(){
+  const maxKm=Math.max(...FLOTA.filter(v=>v.km).map(v=>v.km),100000);
+  const showUpTo=Math.min(Math.ceil(maxKm*1.4/10000)*10000,300000);
+  const visSteps=KM_STEPS.filter(k=>k<=showUpTo);
+  let h=`<table style="font-size:9px"><thead><tr><th style="min-width:110px">Unidad</th>`;
+  visSteps.forEach(k=>{h+=`<th style="text-align:center;padding:4px 2px;min-width:28px">${(k/1000).toFixed(0)}K</th>`;});
+  h+=`</tr></thead><tbody>`;
+  sorted().forEach(v=>{
+    h+=`<tr><td><strong>${v.placa}</strong><br><span style="font-size:8px;color:#777">${v.contrato}</span></td>`;
+    visSteps.forEach(k=>{
+      const cls=getCellClass(v,k);const lbl=getCellLabel(v,k);
+      const pcls={realizado:'prog-r',programado:'prog-p','vencido-cell':'prog-w',pasado:'prog-h',futuro:''}[cls]||'';
+      h+=`<td style="padding:2px"><div class="prog-cell ${pcls}">${lbl}</div></td>`;
+    });
+    h+=`</tr>`;
+  });
+  h+=`</tbody></table>
+  <div style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;font-size:9px">
+    <span><span style="background:#d5f5e3;padding:1px 6px;border-radius:3px">R</span> = Realizado</span>
+    <span><span style="background:#fdebd0;padding:1px 6px;border-radius:3px">P</span> = Programado</span>
+    <span><span style="background:#fadbd8;padding:1px 6px;border-radius:3px">⚠</span> = Vencido</span>
+    <span><span style="background:#f0f4f8;padding:1px 6px;border-radius:3px">✓</span> = Histórico</span>
+  </div>`;
+  return h;
+}
+
+function repHistorialHTML(){
+  if(!HIST.length)return`<p style="text-align:center;padding:2rem;color:#888">Aún no hay servicios registrados.</p>`;
+  let h=`<table><thead><tr><th>Fecha</th><th>Placas</th><th>Marca</th><th>KM</th><th>Tipo de Servicio</th><th>Taller</th><th>Técnico</th><th>Observaciones</th></tr></thead><tbody>`;
+  [...HIST].reverse().forEach(r=>{
+    const v=FLOTA.find(x=>x.placa===r.placa);
+    h+=`<tr><td>${r.fecha}</td><td><strong>${r.placa}</strong></td><td>${v?v.marca:''}</td>
+      <td>${n(r.km)}</td><td>${r.tipo}</td><td>${r.taller||'—'}</td>
+      <td>${r.tec||'—'}</td><td>${r.obs||'—'}</td></tr>`;
+  });
+  h+=`</tbody></table>`;return h;
+}
+
+function repMensualHTML(){
+  if(!HIST.length)return`<p style="text-align:center;padding:2rem;color:#888">Aún no hay servicios registrados.</p>`;
+  const meses={};
+  HIST.forEach(r=>{
+    const [y,m]=r.fecha.split('-');const key=`${y}-${m}`;
+    if(!meses[key])meses[key]={label:new Date(y,m-1).toLocaleDateString('es-MX',{month:'long',year:'numeric'}),servicios:[],total:0};
+    meses[key].servicios.push(r);meses[key].total++;
+  });
+  let h='';
+  Object.entries(meses).sort().forEach(([k,mes])=>{
+    h+=`<div class="section-title">📅 ${mes.label} — ${mes.total} servicio${mes.total>1?'s':''}</div>
+    <table><thead><tr><th>Fecha</th><th>Placas</th><th>KM</th><th>Tipo</th><th>Taller</th></tr></thead><tbody>`;
+    mes.servicios.forEach(r=>{
+      h+=`<tr><td>${r.fecha}</td><td><strong>${r.placa}</strong></td><td>${n(r.km)}</td><td>${r.tipo}</td><td>${r.taller||'—'}</td></tr>`;
+    });
+    h+=`</tbody></table>`;
+  });
+  return h;
+}
+
+function repAnualHTML(){
+  const years={};
+  HIST.forEach(r=>{
+    const y=r.fecha.split('-')[0];
+    if(!years[y])years[y]={total:0,unidades:new Set(),tipos:{}};
+    years[y].total++;years[y].unidades.add(r.placa);
+    years[y].tipos[r.tipo]=(years[y].tipos[r.tipo]||0)+1;
+  });
+  const c=cnts();
+  let h=`<div class="section-title">Estado actual de la flota</div>
+  <div class="kpi-row">
+    <div class="kpi-box danger"><div class="kn">${c.vencido}</div><div class="kl">Vencidos</div></div>
+    <div class="kpi-box warning"><div class="kn">${c.proximo}</div><div class="kl">Próximos</div></div>
+    <div class="kpi-box success"><div class="kn">${c.vigente}</div><div class="kl">Al corriente</div></div>
+    <div class="kpi-box info"><div class="kn">${FLOTA.length}</div><div class="kl">Total unidades</div></div>
+  </div>`;
+  if(Object.keys(years).length){
+    h+=`<div class="section-title">Resumen por año</div>
+    <table><thead><tr><th>Año</th><th>Total Servicios</th><th>Unidades Atendidas</th><th>Tipo más frecuente</th></tr></thead><tbody>`;
+    Object.entries(years).sort().reverse().forEach(([y,d])=>{
+      const topTipo=Object.entries(d.tipos).sort((a,b)=>b[1]-a[1])[0];
+      h+=`<tr><td><strong>${y}</strong></td><td>${d.total}</td><td>${d.unidades.size}</td><td>${topTipo?topTipo[0]:'—'}</td></tr>`;
+    });
+    h+=`</tbody></table>`;
+  }else{h+=`<p style="color:#888;font-size:11px">Sin historial de servicios registrado aún.</p>`;}
+  return h;
+}
+
+function repKmSemanalHTML(){
+  const sems=getSems();
+  const vehs=FLOTA.filter(v=>!['Odóm. inoperante','Sin datos','Unidad aceite caliente'].includes(v.nota));
+  if(!vehs.length)return`<p style="text-align:center;padding:2rem;color:#888">Sin unidades con datos de km.</p>`;
+  // Show only weeks with data
+  const weeksWithData=sems.filter(s=>vehs.some(v=>KM[v.placa]?.[s.i]!=null||(s.i===7&&v.km!=null)));
+  const showSems=weeksWithData.length?weeksWithData:sems.slice(0,8);
+  let h=`<table style="font-size:9px"><thead><tr><th>Unidad</th>`;
+  showSems.forEach(s=>{h+=`<th style="text-align:center;background:${MES_COL[s.mes]}cc;color:#fff;padding:4px 3px;font-size:8px">${s.label}<br>${s.lun}</th>`;});
+  h+=`</tr></thead><tbody>`;
+  vehs.forEach(v=>{
+    h+=`<tr><td><strong>${v.placa}</strong><br><span style="font-size:8px;color:#777">${v.marca}</span></td>`;
+    showSems.forEach(s=>{
+      const val=KM[v.placa]?.[s.i]!=null?KM[v.placa][s.i]:(s.i===7&&v.km!=null?v.km:null);
+      h+=`<td style="text-align:center;padding:4px">${val?val.toLocaleString('es-MX'):'—'}</td>`;
+    });
+    h+=`</tr>`;
+  });
+  h+=`</tbody></table>`;return h;
+}
+
+/* ═══ EXCEL GENERATION ═══ */
+function genExcel(tipo){
+  if(typeof XLSX==='undefined'){toast('Cargando librería Excel, intenta de nuevo…');return;}
+  const wb=XLSX.utils.book_new();
+  if(tipo==='flota')      excelFlota(wb);
+  else if(tipo==='alertas')    excelAlertas(wb);
+  else if(tipo==='programa')   excelPrograma(wb);
+  else if(tipo==='historial')  excelHistorial(wb);
+  else if(tipo==='mensual')    excelMensual(wb);
+  else if(tipo==='anual')      excelAnual(wb);
+  else if(tipo==='kmsemanal')  excelKmSemanal(wb);
+  const fname=`${getReportTitle(tipo).replace(/\s+/g,'_')}_${new Date().toISOString().slice(0,10)}.xlsx`;
+  XLSX.writeFile(wb,fname);
+  toast('Excel descargado correctamente');
+}
+
+function excelFlota(wb){
+  const data=[['Placas','Marca/Modelo','Contrato','KM Actual','Último Serv. (KM)','Próximo Serv. (KM)','KM Restantes','Estado','Nota']];
+  sorted().forEach(v=>{
+    const e=est(v),r=restKm(v);
+    data.push([v.placa,v.marca,v.contrato,nRaw(v.km),nRaw(v.ultsrv),nRaw(proxKm(v)),r!=null?r:null,LBL[e],v.nota||'']);
+  });
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(data),'Flota Completa');
+}
+
+function excelAlertas(wb){
+  const venc=FLOTA.filter(v=>est(v)==='vencido');
+  const prxs=FLOTA.filter(v=>est(v)==='proximo');
+  const d1=[['Placas','Marca','Contrato','KM Actual','Serv. Vencido (KM)','KM de Atraso','Nota']];
+  venc.forEach(v=>{const r=restKm(v);d1.push([v.placa,v.marca,v.contrato,nRaw(v.km),nRaw(proxKm(v)),Math.abs(r),v.nota||'']);});
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(d1),'Vencidos');
+  const d2=[['Placas','Marca','Contrato','KM Actual','Próximo Serv. (KM)','KM Restantes','% Avance']];
+  prxs.forEach(v=>{const r=restKm(v),p=pct(v);d2.push([v.placa,v.marca,v.contrato,nRaw(v.km),nRaw(proxKm(v)),r,p+'%']);});
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(d2),'Próximos');
+}
+
+function excelPrograma(wb){
+  const maxKm=Math.max(...FLOTA.filter(v=>v.km).map(v=>v.km),100000);
+  const showUpTo=Math.min(Math.ceil(maxKm*1.4/10000)*10000,500000);
+  const visSteps=KM_STEPS.filter(k=>k<=showUpTo);
+  const hdr=['Placas','Marca','Contrato',...visSteps.map(k=>`${(k/1000).toFixed(0)}K km`)];
+  const rows=[hdr];
+  sorted().forEach(v=>{
+    rows.push([v.placa,v.marca,v.contrato,...visSteps.map(k=>{
+      const cls=getCellClass(v,k);
+      if(cls==='realizado')return'R - Realizado';
+      if(cls==='programado')return'P - Programado';
+      if(cls==='vencido-cell')return'VENCIDO';
+      if(cls==='pasado')return'Histórico';
+      return'';
+    })]);
+  });
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(rows),'Programa Mtto');
+}
+
+function excelHistorial(wb){
+  const data=[['Fecha','Placas','Marca','KM al Servicio','Tipo de Servicio','Taller','Técnico','Observaciones']];
+  [...HIST].reverse().forEach(r=>{
+    const v=FLOTA.find(x=>x.placa===r.placa);
+    data.push([r.fecha,r.placa,v?v.marca:'',nRaw(r.km),r.tipo,r.taller||'',r.tec||'',r.obs||'']);
+  });
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(data),'Historial');
+}
+
+function excelMensual(wb){
+  const data=[['Mes','Año','Total Servicios','Placas','KM','Tipo','Taller','Técnico']];
+  const sorted_hist=[...HIST].sort((a,b)=>a.fecha.localeCompare(b.fecha));
+  sorted_hist.forEach(r=>{
+    const [y,m]=r.fecha.split('-');
+    const mes=new Date(y,m-1).toLocaleDateString('es-MX',{month:'long'});
+    data.push([mes,y,null,r.placa,nRaw(r.km),r.tipo,r.taller||'',r.tec||'']);
+  });
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(data),'Por Mes');
+  // Summary
+  const sum={};
+  sorted_hist.forEach(r=>{const[y,m]=r.fecha.split('-');const k=`${y}-${m}`;sum[k]=(sum[k]||0)+1;});
+  const sumData=[['Mes-Año','Total Servicios'],...Object.entries(sum).map(([k,v])=>[k,v])];
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(sumData),'Resumen Mensual');
+}
+
+function excelAnual(wb){
+  const c=cnts();
+  const flotaData=[['Indicador','Valor'],
+    ['Total unidades',FLOTA.length],['Vencidos',c.vencido],['Próximos',c.proximo],
+    ['Al corriente',c.vigente],['Sin datos',c.sindata],['Total servicios registrados',HIST.length]];
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(flotaData),'Resumen Anual');
+  const years={};
+  HIST.forEach(r=>{const y=r.fecha.split('-')[0];if(!years[y])years[y]=0;years[y]++;});
+  const yData=[['Año','Total Servicios'],...Object.entries(years).sort().map(([y,t])=>[y,t])];
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(yData),'Servicios por Año');
+}
+
+function excelKmSemanal(wb){
+  const sems=getSems();
+  const vehs=FLOTA.filter(v=>!['Odóm. inoperante','Sin datos','Unidad aceite caliente'].includes(v.nota));
+  const hdr=['Placas','Marca','Contrato',...sems.map(s=>`${s.label} ${s.lun}`)];
+  const rows=[hdr];
+  vehs.forEach(v=>{
+    rows.push([v.placa,v.marca,v.contrato,...sems.map(s=>{
+      const val=KM[v.placa]?.[s.i]!=null?KM[v.placa][s.i]:(s.i===7&&v.km!=null?v.km:null);
+      return val||'';
+    })]);
+  });
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(rows),'KM Semanal');
+}
+
+/* ── INIT ── */
 const hoy=new Date();
 const sbDate=document.getElementById('sb-date');
 if(sbDate)sbDate.textContent=hoy.toLocaleDateString('es-MX',{weekday:'long',day:'2-digit',month:'long'});
-load();
-</script>
 
-<script>
 if('serviceWorker' in navigator){
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js')
-      .then(r => console.log('SW registered', r.scope))
-      .catch(e => console.log('SW error', e));
-  });
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 }
-
-// Install banner
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  showInstallBanner();
-});
-window.addEventListener('appinstalled', () => {
-  hideInstallBanner();
-  deferredPrompt = null;
-});
-function showInstallBanner(){
-  if(document.getElementById('install-banner')) return;
-  const b = document.createElement('div');
-  b.id = 'install-banner';
-  b.style.cssText = 'position:fixed;bottom:calc(var(--nav) + env(safe-area-inset-bottom) + 8px);left:50%;transform:translateX(-50%);background:#1B3A6B;color:#fff;padding:10px 16px;border-radius:20px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:10px;z-index:998;box-shadow:0 4px 16px rgba(0,0,0,.25);white-space:nowrap';
-  b.innerHTML = '<span>📲 Instalar app en tu dispositivo</span><button onclick="installApp()" style="background:#fff;color:#1B3A6B;border:none;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer">Instalar</button><button onclick="hideInstallBanner()" style="background:none;border:none;color:rgba(255,255,255,.6);font-size:16px;cursor:pointer;line-height:1">×</button>';
-  document.body.appendChild(b);
-}
-function hideInstallBanner(){
-  const b=document.getElementById('install-banner');
-  if(b) b.remove();
-}
-async function installApp(){
-  if(!deferredPrompt) return;
-  deferredPrompt.prompt();
-  const {outcome} = await deferredPrompt.userChoice;
-  if(outcome==='accepted') hideInstallBanner();
-  deferredPrompt = null;
-}
+load();
 </script>
 </body>
 </html>
